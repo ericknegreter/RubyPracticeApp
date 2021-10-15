@@ -1,0 +1,49 @@
+<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field form-group">
+    <% f.label :email %><br />
+    <%= f.email_field :email, class:"form-control", placeholder:"Email", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field form-group">
+    <% f.label :password %> <i></i><br />
+    <%= f.password_field :password, class:"form-control", placeholder:"Password (leave blank if you don't want to change it)",autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+  
+  <div class="field form-group">
+    <% f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Confirmacion password", autocomplete: "new-password" %>
+  </div>
+
+  <div class="field form-group">
+    <% f.label :current_password %> <i></i><br />
+    <%= f.password_field :current_password, class:"form-control", placeholder:"Password actual(necesitamos tu password actual para confirmar tus cambios)", autocomplete: "current-password" %>
+  </div>
+  </br>
+  <div class="actions">
+    <%= f.submit "Update", class:"btn btn-secondary" %>
+  </div>
+<% end %>
+</br>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Cancel my account</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Unhappy?</h5>
+    <p class="card-text"><%= button_to "Cancel my account", registration_path(resource_name), class:"btn btn-dark", data: { confirm: "Are you sure?" }, method: :delete %></p>
+  </div>
+</div>
+</br>
+<%= link_to "Back", :back %>
