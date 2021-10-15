@@ -1,24 +1,5 @@
-# README
+# App para desarrollo de mis habilidades
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Si estas viendo este mensaje es por que estas revisando mi repositorio.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Este proyecto es un ejercicio para el desarrollo de mis habilidades en MVC en ruby on rails.
